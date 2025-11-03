@@ -1,7 +1,7 @@
 /* --- ค่าเริ่มต้นและฟอนต์ --- */
 :root {
-    --primary-color: #FF6600; /* สีส้ม (เหมือนโลโก้) */
-    --secondary-color: #003366; /* สีน้ำเงินเข้ม (เหมือนโลโก้) */
+    --primary-color: #FF6600;
+    --secondary-color: #003366;
     --light-bg: #f4f7f6;
     --dark-text: #333;
     --light-text: #ffffff;
@@ -231,9 +231,9 @@ nav .container {
 
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* <--- แก้เป็นแบบนี้ครับ */
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    margin-bottom: 60px; /* <--- เพิ่มบรรทัดนี้เพื่อเว้นช่องไฟก่อนถึงส่วน Contact ครับ */
+    margin-bottom: 60px;
 }
 
 .portfolio-item {
@@ -264,7 +264,7 @@ nav .container {
     background: var(--secondary-color);
     color: var(--light-text);
     text-align: center;
-    padding: 40px 20px; /* <--- เพิ่มบรรทัดนี้เข้าไป */
+    padding: 40px 20px;
 }
 
 .contact-section h2 {
@@ -291,52 +291,67 @@ footer {
     text-align: center;
     padding: 20px;
 }
-/* --- 8. Responsive (สำหรับมือถือ) --- */
-/* ★★★ เพิ่มส่วนนี้เข้าไปท้ายไฟล์ ★★★ */
+
+/* --- 8. Responsive --- */
 @media (max-width: 768px) {
-    /* ปรับ navbar (เผื่อไว้) */
-    nav .container {
-        flex-direction: column;
-    }
-    .nav-links {
-        margin-top: 15px;
-    }
-    .nav-links li {
-        margin-left: 15px;
-    }
 
-    /* ปรับฟอนต์ Hero */
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-    .hero-content h2 {
-        font-size: 1.5rem;
-    }
+  /* ✅ ปรับ Navbar เฉพาะมือถือ */
+  nav .container {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    /* *** ส่วนสำคัญ: ปรับตารางผลงานเป็น 1 คอลัมน์ *** */
-    .portfolio-grid {
-        grid-template-columns: 1fr;
-    }
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+  }
 
-    /* ปรับตารางบริการเป็น 1 คอลัมน์ */
-    .service-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    /* ปรับตาราง Why Us เป็น 1 คอลัมน์ */
-    .whyus-grid {
-        grid-template-columns: 1fr;
-    }
+  .nav-links li {
+    margin: 5px 10px;
+  }
+
+  .nav-links a {
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+
+  /* Hero */
+  .hero-content h1 { font-size: 2.5rem; }
+  .hero-content h2 { font-size: 1.5rem; }
+
+  /* Layout sections */
+  .service-grid,
+  .whyus-grid,
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
 }
-/* --- 9. ปุ่มติดต่อลอย (Floating Button) --- */
+
+/* --- สำหรับจอเล็กมาก (เช่น iPhone SE) --- */
+@media (max-width: 480px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  .nav-links li {
+    margin: 8px 0;
+  }
+  .hero {
+    height: auto;
+    padding: 50px 10px;
+  }
+}
+
+/* --- 9. ปุ่มติดต่อลอย --- */
 #floating-contact {
-    position: fixed; /* <-- ทำให้ลอยติดหน้าจอ */
-    bottom: 20px;    /* <-- ห่างจากขอบล่าง 20px */
-    right: 20px;     /* <-- ห่างจากขอบขวา 20px */
-    z-index: 99;     /* <-- ให้ลอยอยู่เหนือสุด */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
     display: flex;
-    flex-direction: column; /* <-- จัดเรียงแนวตั้ง (บน-ล่าง) */
-    gap: 10px;              /* <-- เว้นระยะห่างระหว่าง 2 ปุ่ม */
+    flex-direction: column;
+    gap: 10px;
 }
 
 #floating-contact a {
@@ -345,7 +360,7 @@ footer {
     justify-content: center;
     width: 60px;
     height: 60px;
-    border-radius: 50%; /* <-- ทำให้เป็นวงกลม */
+    border-radius: 50%;
     color: white;
     text-decoration: none;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
@@ -353,13 +368,13 @@ footer {
 }
 
 #floating-contact a:hover {
-    transform: scale(1.1); /* ลูกเล่นเวลาเอาเมาส์ชี้ */
+    transform: scale(1.1);
 }
 
 .btn-line {
-    background-color: #00B900; /* สีเขียว LINE */
+    background-color: #00B900;
 }
 
 .btn-phone {
-    background-color: var(--primary-color); /* สีเขียวหลักของเว็บ (ตามรูปเป๊ะ) */
+    background-color: var(--primary-color);
 }
