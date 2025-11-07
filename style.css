@@ -162,7 +162,7 @@ nav .container {
     margin-bottom: 10px;
 }
 
-/* --- 4. Why Us Section --- */
+/* --- 4. Why Us Section (✨ แก้ไขตามนี้ ✨) --- */
 .whyus-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -183,8 +183,21 @@ nav .container {
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
+/* (โค้ดที่เพิ่มสำหรับไอคอนรูปภาพ) */
+.whyus-icon {
+    margin-bottom: 15px; /* ระยะห่างระหว่างรูปกับหัวข้อ */
+}
+
+.whyus-icon img {
+    width: 60px;  /* ปรับขนาดความกว้างรูป */
+    height: 60px; /* ปรับขนาดความสูงรูป */
+    object-fit: contain; /* กันรูปภาพบิดเบี้ยว */
+}
+
+/* (แก้ไข h3 ให้ชิดไอคอน) */
 .whyus-item h3 {
     color: var(--secondary-color);
+    margin-top: 0; /* (เพิ่มบรรทัดนี้) */
     margin-bottom: 10px;
     font-size: 1.4rem;
 }
@@ -259,6 +272,63 @@ nav .container {
     display: none;
 }
 
+/* --- 5.5 Warranty Section --- */
+.warranty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.warranty-item {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid var(--primary-color); /* เน้นด้วยขอบสีส้ม */
+}
+
+.warranty-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.warranty-icon {
+    font-size: 2.5rem; /* ขนาดไอคอนติ๊กถูก */
+    margin-bottom: 10px;
+}
+
+.warranty-item h3 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+.warranty-item p {
+    font-size: 1.1rem;
+    color: var(--dark-text);
+    margin: 0;
+}
+
+/* --- 5.6 Video Section (✨ เพิ่มส่วนนี้สำหรับ YouTube ✨) --- */
+.video-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    position: relative;
+    height: 0;
+    margin-bottom: 20px; /* ระยะห่างเล็กน้อย */
+}
+
+.video-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
 /* --- 6. Contact Section --- */
 .contact-section {
     background: var(--secondary-color);
@@ -323,6 +393,7 @@ footer {
   /* Layout sections */
   .service-grid,
   .whyus-grid,
+  .warranty-grid, 
   .portfolio-grid {
     grid-template-columns: 1fr;
   }
@@ -377,4 +448,11 @@ footer {
 
 .btn-phone {
     background-color: var(--primary-color);
+}
+
+/* --- 10. Floating Icon Size (Image) --- */
+#floating-contact a img {
+    width: 32px;  /* ปรับขนาดรูปไอคอนตามต้องการ */
+    height: 32px; /* ปรับขนาดรูปไอคอนตามต้องการ */
+    vertical-align: middle; /* ช่วยจัดให้รูปอยู่ตรงกลางปุ่ม */
 }
